@@ -1,38 +1,61 @@
 body {
-    color: #5bc0de;
-    font-family: "Poppins", sans-serif;
+  background: #faf3ec;
+  color: #5bc0de;
+  font-family: "Poppins", sans-serif;
 }
 
 .fa-map-marker-alt,
 .fa-dot-circle {
-    color: #5bc0de;
+  color: #5bc0de;
 }
 
 /*Jumbotron*/
 #Map-Section {
-    background-color: transparent;
-    margin: 0;
-    padding: 10px;
+  background-color: transparent;
+  margin: 0;
+  padding: 10px;
 }
-form{
-margin: 50px 40px;
+form {
+  margin: 50px 40px;
 }
-label{
-    max-width: 50px !important;
-    margin-bottom: 1rem;
+label {
+  max-width: 50px !important;
+  margin-bottom: 1rem;
 }
-.inputDiv{
-    max-width: 700px;
+.inputDiv {
+  max-width: 700px;
 }
-input{
-    width: 100%;
+input {
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: none;
+  appearance: none;
+  border: none;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid darken(#faf5f3, 10%);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 11px;
+  position: relative;
+  z-index: 500;
+  letter-spacing: 0.06em;
+}
+#btn {
+  margin: 1rem 4rem;
+  background-color: #d4af7a;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  color: azure;
+  border-color: #d4af7a;
 }
 /*map*/
 #googleMap {
-    width: 80%;
-    height: 400px;
-    margin: 10px auto;
-    
+  width: 80%;
+  height: 400px;
+  margin: 10px auto;
 }
-
-
