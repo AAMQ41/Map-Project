@@ -1,4 +1,7 @@
-const btn = document.getElementById("btn");
+const btnCafe = document.getElementById("btnCafe");
+const btnRestaurant = document.getElementById("btnRestaurant");
+
+
 let latitude = 0;
 let longitude = 0;
 let map, infoWindow, markers, autocomplete1, latlang, geocoder;
@@ -65,13 +68,19 @@ function initMap() {
 
   directionsDisplay.setMap(map);
   //this.autocomplete1.addListener('places_changed', ((that) => () => this.placesChanged(that))(this));
+var typeOfSearch;
+btnCafe.addEventListener("click", function () {
+    typeOfSearch="cafe";
+    calcRoute(directionsService, directionsDisplay,typeOfSearch);
 
-  btn.addEventListener("click", function () {
-    calcRoute(directionsService, directionsDisplay);
+  });
+  btnRestaurant.addEventListener("click",function () {
+    typeOfSearch="restaurant";
+    calcRoute(directionsService, directionsDisplay,typeOfSearch);
   });
 }
 
-function calcRoute(directionsService, directionsDisplay) {
+function calcRoute(directionsService, directionsDisplay,typeOfSearch) {
   //var place = Autocomplete.getPlace();
 
   const myLatLng = new google.maps.LatLng(24.774265, -46.738586);
@@ -107,8 +116,12 @@ function calcRoute(directionsService, directionsDisplay) {
 
       bounds.union(result.routes[0].bounds);
       map.fitBounds(bounds);
+      if(typeOfSearch=="cafe")
+  {nearbyCafe(); }
+  if(typeOfSearch=="restaurant")
+  {nearbyRestaurant(); }
+  
 
-      nearbyCafe();
     } else {
       //delete route from map
       directionsDisplay.setDirections({ routes: [] });
@@ -127,6 +140,17 @@ function nearbyCafe() {
     location: map.getCenter(),
     radius: 8047,
     types: ["cafe"],
+  };
+  var service = new google.maps.places.PlacesService(map);
+
+  service.nearbySearch(request2, callback);
+}
+
+function nearbyRestaurant() {
+  var request2 = {
+    location: map.getCenter(),
+    radius: 8047,
+    types: ["restaurant"],
   };
   var service = new google.maps.places.PlacesService(map);
 
