@@ -78,6 +78,11 @@ btnCafe.addEventListener("click", function () {
     typeOfSearch="restaurant";
     calcRoute(directionsService, directionsDisplay,typeOfSearch);
   });
+
+  btnATM.addEventListener("click",function () {
+    typeOfSearch="atm";
+    calcRoute(directionsService, directionsDisplay,typeOfSearch);
+  });
 }
 
 function calcRoute(directionsService, directionsDisplay,typeOfSearch) {
@@ -120,7 +125,8 @@ function calcRoute(directionsService, directionsDisplay,typeOfSearch) {
   {nearbyCafe(); }
   if(typeOfSearch=="restaurant")
   {nearbyRestaurant(); }
-  
+  if(typeOfSearch=="atm")
+  {nearbyATM(); }
 
     } else {
       //delete route from map
@@ -151,6 +157,17 @@ function nearbyRestaurant() {
     location: map.getCenter(),
     radius: 8047,
     types: ["restaurant"],
+  };
+  var service = new google.maps.places.PlacesService(map);
+
+  service.nearbySearch(request2, callback);
+}
+
+function nearbyATM() {
+  var request2 = {
+    location: map.getCenter(),
+    radius: 8047,
+    types: ["atm"],
   };
   var service = new google.maps.places.PlacesService(map);
 
