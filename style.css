@@ -112,6 +112,12 @@ label{
   padding: 0 15px;
   resize: none;
 }
+ .message-box{
+  min-height: 110px;
+}
+ .inputDiv textarea{
+  padding-top: 6px;
+}
 .tem-form{
   float:left;
   padding-left: 50%;
