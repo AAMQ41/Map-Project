@@ -33,9 +33,7 @@ function initMap() {
   geocoder = new google.maps.Geocoder();
 
   //get the current location and display it to the map and get the lat and lng and convert into an address then store into input1
-  infoWindow = new google.maps.InfoWindow();
-  map.controls[google.maps.ControlPosition.TOP_CENTER];
-  window.addEventListener("load", function getLocation() {
+  
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -46,7 +44,7 @@ function initMap() {
         getCordinationsToAddress(pos.lat, pos.lng, geocoder, input1);
       });
     }
-  });
+ 
 
   // display the rote
   const directionsService = new google.maps.DirectionsService();
