@@ -124,23 +124,32 @@ function nearbyCafe() {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    console.log(results.length);
+
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
-      // tt+=results[i].name+"<br/>";
-      console.log(results[i].name);
+
     }
-    //  document.getElementById('output').innerHTML=tt;
+
   }
 }
 
 function createMarker(place) {
+  let infowindow = new google.maps.InfoWindow
+
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
     position: place.geometry.location,
     title: place.name,
     icon: coffee,
+  });
+  marker.addListener('click',  ()=> {
+    infowindow.setContent('<h5 class="info"> Cafe: ' + place.name + '</h5> <h6 class="info"> rating: '+place.rating+'</h6>');
+    infowindow.open({
+      anchor: marker,
+      map,
+      shouldFocus: false,
+    });
   });
 }
 
