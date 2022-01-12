@@ -178,3 +178,8 @@ function getCordinationsToAddress(lat, lng, geocoder, input1) {
     }
   );
 }
+// for the coffee banner
+function myFunction() {
+  var elmnt = document.getElementById("Map-Section");
+  elmnt.scrollIntoView();
+}
