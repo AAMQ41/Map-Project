@@ -1,12 +1,60 @@
+
 body {
   background: #faf3ec;
   color: #5bc0de;
   font-family: "Poppins", sans-serif;
 }
+/* hiding default scroll bar  */
+body::-webkit-scrollbar{
+  display: none;
+}
 
 .fa-map-marker-alt,
 .fa-dot-circle {
   color: #5bc0de;
+}
+
+/* hero */
+
+#hero {
+	position: relative;
+	width: 100%;
+	height: 800px;
+	background: url('https://source.unsplash.com/1800x800/?coffee');
+    background-size: cover;
+}
+
+.hero-info {
+	position: absolute;
+	top: 80%;
+	left: 10%;
+	margin-top: -80px;
+	margin-left: -96.5px;
+	text-align: center;
+	color: #fff;
+}
+
+
+.hero-info h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.hero-info a {
+    color:  #fff;
+    text-decoration: none;
+    font-weight: 400;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 5px 20px;
+    background-color: rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+
+.hero-info a:hover {
+	border-width: 1px;
+	opacity: .7;
 }
 
 /*Jumbotron*/
@@ -18,33 +66,11 @@ body {
 form {
   margin: 50px 40px;
 }
-label {
-  max-width: 50px !important;
-  margin-bottom: 1rem;
-}
+
 .inputDiv {
   max-width: 700px;
 }
-input {
-  width: 100%;
-  background: #fff;
-  text-align: center;
-  margin-bottom: 25px;
-  box-shadow: none;
-  appearance: none;
-  border: none;
-  border-top: 1px solid #fff;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
-  border-bottom: 1px solid darken(#faf5f3, 10%);
-  padding-top: 8px;
-  padding-bottom: 8px;
-  text-transform: uppercase;
-  font-size: 11px;
-  position: relative;
-  z-index: 500;
-  letter-spacing: 0.06em;
-}
+
 .info {
   color: #85745c;
   font-family: "Poppins", sans-serif;
@@ -52,17 +78,61 @@ input {
   text-transform: uppercase;
   text-align: center;
 }
-#btn {
-  margin: 1rem 4rem;
-  background-color: #d4af7a;
-  border-radius: 5px;
-  padding: 0.5rem 1.5rem;
-  color: azure;
-  border-color: #d4af7a;
-}
+
 /*map*/
 #googleMap {
-  width: 80%;
-  height: 400px;
-  margin: 10px auto;
+  width: 100%;
+  height: 700px;
+  /* margin: 10px auto; */
+}
+label{
+  color: #85745c;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.06em;
+  
+}
+.row{
+  justify-content: center;
+  align-items: center;
+}
+.inputDiv{
+  height: 50px;
+  width: 100%;
+
+}
+.inputDiv input,
+.inputDiv textarea{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.tem-form{
+  float:left;
+  padding-left: 50%;
+  vertical-align: middle;
+}
+
+.button{
+  display: inline-block;
+  margin-top: 12px;
+}
+#btn{
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #85745c;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#btn:hover{
+  background: #85745c;
 }
