@@ -76,7 +76,7 @@ function initMap() {
     for (var radio of radios)
     {
         if (radio.checked) {
-            alert(radio.value);
+          //  alert(radio.value);
             space_value=radio.value;
         }
     }
