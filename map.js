@@ -53,38 +53,42 @@ function initMap() {
   directionsDisplay.setMap(map);
   //this.autocomplete1.addListener('places_changed', ((that) => () => this.placesChanged(that))(this));
   var spaceTypeID = document.getElementById('spaceTypeID').value;
-
+/*
   var space_value;
   if (document.getElementById('r1').checked) {
     space_value = document.getElementById('r1').value;
-    console.log(space_value);
-    
-
-  }
-
-  if (document.getElementById('r2').checked) {
+  }else if (document.getElementById('r2').checked) {
     space_value = document.getElementById('r2').value;
-    console.log(space_value);
-    alert(space_value);
-
-  }
-  if (document.getElementById('r3').checked) {
+}else if (document.getElementById('r3').checked) {
     space_value = document.getElementById('r3').value;
-    console.log(space_value);
+}
+*/
 
-  }
+  
+
+  
+  
 
   
 
   btn.addEventListener("click", function () {
-    calcRoute(directionsService, directionsDisplay);
-console.log('Amal ');
-console.log(space_value);
+    var radios = document.getElementsByName('contact');
+    for (var radio of radios)
+    {
+        if (radio.checked) {
+            alert(radio.value);
+            space_value=radio.value;
+        }
+    }
+    
+    calcRoute(directionsService, directionsDisplay,space_value);
+    
+
 
   });
 }
 
-function calcRoute(directionsService, directionsDisplay) {
+function calcRoute(directionsService, directionsDisplay,space_value) {
   //var place = Autocomplete.getPlace();
 
   const myLatLng = new google.maps.LatLng(24.774265, -46.738586);
@@ -121,8 +125,12 @@ function calcRoute(directionsService, directionsDisplay) {
       bounds.union(result.routes[0].bounds);
       map.fitBounds(bounds);
 
-      nearbyCafe();
-    } else {
+      if(space_value=="cafe")
+      {nearbyCafe(); }
+      if(space_value=="restaurant")
+      {nearbyRestaurant(); }
+      if(space_value=="atm")
+      {nearbyATM(); }    } else {
       //delete route from map
       directionsDisplay.setDirections({ routes: [] });
       //center map in London
@@ -140,6 +148,28 @@ function nearbyCafe() {
     location: map.getCenter(),
     radius: 8047,
     types: ["cafe"],
+  };
+  var service = new google.maps.places.PlacesService(map);
+
+  service.nearbySearch(request2, callback);
+}
+
+function nearbyRestaurant() {
+  var request2 = {
+    location: map.getCenter(),
+    radius: 8047,
+    types: ["restaurant"],
+  };
+  var service = new google.maps.places.PlacesService(map);
+
+  service.nearbySearch(request2, callback);
+}
+
+function nearbyATM() {
+  var request2 = {
+    location: map.getCenter(),
+    radius: 8047,
+    types: ["atm"],
   };
   var service = new google.maps.places.PlacesService(map);
 
