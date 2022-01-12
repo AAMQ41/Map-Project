@@ -45,6 +45,13 @@ input {
   z-index: 500;
   letter-spacing: 0.06em;
 }
+.info{
+  color: #85745c;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
 #btn {
   margin: 1rem 4rem;
   background-color: #d4af7a;
