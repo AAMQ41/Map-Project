@@ -44,17 +44,6 @@ function initMap() {
           lng: position.coords.longitude,
         };
         getCordinationsToAddress(pos.lat, pos.lng, geocoder, input1);
-        map.setCenter();
-        markers = new google.maps.Marker({
-          position: pos,
-          // content:'YOU ARE HERE',
-          title: "my location",
-          map: map,
-        });
-        infoWindow.setPosition(pos);
-        infoWindow.setContent("Location found.");
-        infoWindow.open(map, markers);
-        map.setCenter(pos);
       });
     }
   });

@@ -41,13 +41,33 @@
             </div>
           </div>
         </form>
-        <button type="submit" id="btn"><i class="fas fa-map-signs"></i></button>
+        <button type="submit" class="btn btn-primary" id="btn"
+    data-bs-toggle="modal" data-bs-target="#exampleModal" ><i class="fas fa-map-signs"></i></button>
       </div>
       <div class="container-fluid">
         <div id="googleMap"></div>
-        <div id="output"></div>
+        
       </div>
     </section>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+        
+        <button type="button" class="btn-close" 
+        data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-body">
+          <div id="output">
+
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
