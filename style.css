@@ -20,8 +20,9 @@ body::-webkit-scrollbar{
 	position: relative;
 	width: 100%;
 	height: 800px;
-	background: url('https://source.unsplash.com/1800x800/?coffee');
-    background-size: cover;
+/*	background: url('https://source.unsplash.com/1800x800/?coffee');*/
+background: url('https://st2.depositphotos.com/1084193/6141/v/950/depositphotos_61410241-stock-illustration-abstract-technology-background-business-development.jpg');
+background-size: cover;
 }
 
 .hero-info {
@@ -38,6 +39,7 @@ body::-webkit-scrollbar{
 .hero-info h1 {
     font-size: 4em;
     margin-bottom: 20px;
+    color: #2596be;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
@@ -141,4 +143,9 @@ label{
 }
 #btn:hover{
   background: #85745c;
+}
+
+.custom-control-label{
+  margin-left: 20px;
+  color: black !important;
 }

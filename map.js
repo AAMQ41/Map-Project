@@ -52,9 +52,35 @@ function initMap() {
 
   directionsDisplay.setMap(map);
   //this.autocomplete1.addListener('places_changed', ((that) => () => this.placesChanged(that))(this));
+  var spaceTypeID = document.getElementById('spaceTypeID').value;
+
+  var space_value;
+  if (document.getElementById('r1').checked) {
+    space_value = document.getElementById('r1').value;
+    console.log(space_value);
+    
+
+  }
+
+  if (document.getElementById('r2').checked) {
+    space_value = document.getElementById('r2').value;
+    console.log(space_value);
+    alert(space_value);
+
+  }
+  if (document.getElementById('r3').checked) {
+    space_value = document.getElementById('r3').value;
+    console.log(space_value);
+
+  }
+
+  
 
   btn.addEventListener("click", function () {
     calcRoute(directionsService, directionsDisplay);
+console.log('Amal ');
+console.log(space_value);
+
   });
 }
 
