@@ -25,31 +25,45 @@
   </head>
 
   <body>
+    <section id="hero">
+      <div class="hero-info">
+        <h1>Fined Nearest Cafe</h1>
+        <a onclick="myFunction()">Get Started</a>
+      </div>
+    </section>
+
     <section id="Map-Section">
       <div class="container-fluid">
-        <form>
-          <div class="row">
-            <label for="from"><i class="far fa-dot-circle"></i></label>
-            <div class="inputDiv">
-              <input type="text" id="from" placeholder="From" />
+        <div class="row">
+          <form>
+            <div class="row">
+            <div class="col-5">
+              <div class="inputDiv">
+                <label for=""><i class="fas fa-street-view"></i> Current</label>
+                <input type="text" id="from" placeholder="From" >
+                  
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <label for="to"><i class="fas fa-map-marker-alt"></i></label>
+            <div class="col-5">
             <div class="inputDiv">
+              <label for=""><i class="fas fa-map-signs"></i> Destination</label>
               <input type="text" id="to" placeholder="To" />
             </div>
           </div>
+          </div>
         </form>
-        <button
+        <div class="col-2"><button
           type="submit"
           class="btn btn-primary"
           id="btn"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-        >
-          <i class="fas fa-map-signs"></i>
-        </button>
+          data-inline="true">
+        
+          <i class="fas fa-search-location"></i>
+        </button></div>
+        </div>
+       
       </div>
       <div class="container-fluid">
         <div id="googleMap"></div>
